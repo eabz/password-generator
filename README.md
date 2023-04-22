@@ -1,6 +1,6 @@
 # Easy and readable password generator
 
-This code is based on and ported to Rust from the password generator created by Christian Haensel and modified by Josh Hartman, which can be found at https://www.warpconduit.net/password-generator/.
+This code is based on and ported to Rust from the password generator created by Christian Haensel, modified by Josh Hartman, and modified by Joseph Kreifels II, which can be found at https://www.warpconduit.net/password-generator/ and here https://jkdos.com/apps/php/passwd-gen/
 
 ## Requirements
 
