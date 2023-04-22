@@ -5,7 +5,13 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4", features = ["derive"] }
+log = "0.4"
 rand = "0.8"
+
+[dependencies.simple_logger]
+version = "4"
+default-features = false
+features = ["colors"]
 
 [[bin]]
 path = "bin/generator.rs"
