@@ -8,6 +8,20 @@ This code is based on and ported to Rust from the password generator created by 
 
 ## Install
 
+1. Install the crate
+
+```
+cargo install pwdgen
+```
+
+2. Run the program
+
+```
+pwdgen
+```
+
+## Build
+
 1. Clone the repository
 
 ```
