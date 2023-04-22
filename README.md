@@ -11,7 +11,7 @@ This code is based on and ported to Rust from the password generator created by 
 1. Clone the repository
 
 ```
-git clone https://github.com/eabz/password-generator && cd password-generator
+git clone https://github.com/eabz/pwdgen && cd pwdgen
 ```
 
 2. Build the program
@@ -23,7 +23,7 @@ cargo build --release
 3. Run the generator
 
 ```
-./target/release/generator
+./target/release/pwdgen
 ```
 
 ## Program flags
