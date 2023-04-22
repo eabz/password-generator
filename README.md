@@ -1,8 +1,6 @@
 # Easy to remember and readable password generator
 
-This library contains a simple program to generate simple passwords.
-
-This code is based and ported to rust from the password generator created by Christian Haensel and modified by Josh Hartman found in https://www.warpconduit.net/password-generator/
+This code is based on and ported to Rust from the password generator created by Christian Haensel and modified by Josh Hartman, which can be found at https://www.warpconduit.net/password-generator/.
 
 ## Requirements
 
@@ -30,7 +28,7 @@ cargo build --release
 
 ## Program flags
 
-|        Flag        | Default |                 Purpose                 |
-| :----------------: | ------: | :-------------------------------------: |
-| --passwords or --p |      10 |    Amount of passwords to generate.     |
-|      --length      |      14 | Amount of characters for each password. |
+| Flag            | Default | Purpose                                 |
+| --------------- | :-----: | --------------------------------------- |
+| -p, --passwords |   10    | Amount of passwords to generate.        |
+| -l, --length    |   14    | Amount of characters for each password. |
