@@ -2,7 +2,7 @@
 name = "pwdgen"
 version = "1.0.2"
 edition = "2021"
-description = "Easy to remember and readable random passwords generator"
+description = "Easy and readable password generator"
 license = "MIT"
 
 [dependencies]

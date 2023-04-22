@@ -1,4 +1,4 @@
-# Easy to remember and readable password generator
+# Easy and readable password generator
 
 This code is based on and ported to Rust from the password generator created by Christian Haensel and modified by Josh Hartman, which can be found at https://www.warpconduit.net/password-generator/.
 

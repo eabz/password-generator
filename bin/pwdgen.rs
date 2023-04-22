@@ -7,7 +7,7 @@ use std::process;
 #[derive(Parser, Debug)]
 #[command(
     name = "Password Generator",
-    about = "Easy to remember and readable random passwords generator."
+    about = "Easy and readable password generator."
 )]
 pub struct GeneratorArgs {
     #[arg(
