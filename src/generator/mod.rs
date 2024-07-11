@@ -14,31 +14,43 @@ pub fn random_password(requested_length: usize) -> String {
         "y", "z", "sh", "sn", "tr", "th", "ch",
     ];
 
-    let vocals = vec!["a", "e", "i", "o", "u", "ee", "oo", "ie", "au"];
+    let vowels = vec!["a", "e", "i", "o", "u", "ee", "oo", "ie", "au"];
 
     let special_characters = vec![
-        "!", "@", "#", "$", "%", "^", "&", "*", "-", "+", "?", "=", "~",
+        "!", "@", "#", "$", "%", "&", "*", "-", "+", "?", "=", "(", ")", ";", ">", "<", "[", "]",
     ];
 
     let mut password = String::new();
-
     let mut rng = thread_rng();
 
-    let max = length / 2;
-
-    for _ in 1..=max {
-        password.push_str(consonants.choose(&mut rand::thread_rng()).unwrap());
-        password.push_str(vocals.choose(&mut rand::thread_rng()).unwrap());
+    for _ in 0..length / 2 {
+        password.push_str(consonants.choose(&mut rng).unwrap());
+        password.push_str(vowels.choose(&mut rng).unwrap());
     }
 
-    password.truncate(len - 3);
+    password.truncate(length);
 
-    password.push_str(&format!("{:02}", rng.gen_range(10..=99)));
+    let num_digits = rng.gen_range(1..=4);
+    let mut digit_positions: Vec<usize> = (0..password.len()).collect();
+    digit_positions.shuffle(&mut rng);
+    digit_positions.truncate(num_digits);
 
-    password.push_str(special_characters.choose(&mut rand::thread_rng()).unwrap());
+    for pos in digit_positions.iter() {
+        let digit = rng.gen_range(0..=9).to_string();
+        password.insert_str(*pos, &digit);
+    }
+
+    let num_specials = rng.gen_range(1..=2);
+    let mut special_positions: Vec<usize> = (0..password.len()).collect();
+    special_positions.shuffle(&mut rng);
+    special_positions.truncate(num_specials);
+
+    for pos in special_positions.iter() {
+        let special_char = special_characters.choose(&mut rng).unwrap();
+        password.insert_str(*pos, special_char);
+    }
 
     let mut new_pass = password.clone();
-
     new_pass.replace_range(0..1, &password[0..1].to_uppercase());
 
     new_pass
